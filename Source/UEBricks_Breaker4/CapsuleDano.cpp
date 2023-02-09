@@ -3,3 +3,8 @@
 
 #include "CapsuleDano.h"
 
+ACapsuleDano::ACapsuleDano()
+{
+	NameCap = "Dano";
+
+}

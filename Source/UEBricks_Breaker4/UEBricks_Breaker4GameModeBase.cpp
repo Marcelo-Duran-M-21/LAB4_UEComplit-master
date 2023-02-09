@@ -6,6 +6,9 @@
 #include "Ball.h"
 #include "Brick.h"
 #include "CapsuleBasic.h"
+#include "GenerateCapsule.h"
+#include "GenerateCapsuleDamage.h"
+#include "GenerateCapsuleHelp.h"
 
 AUEBricks_Breaker4GameModeBase::AUEBricks_Breaker4GameModeBase()
 {
@@ -18,6 +21,45 @@ AUEBricks_Breaker4GameModeBase::AUEBricks_Breaker4GameModeBase()
 void AUEBricks_Breaker4GameModeBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	//creamos un numero randomico para nuestro rango den posibilidades 
+	auto probabilityCap = FMath::FRandRange(1, 11);
+	// aqui es donde creamos nuestros capsulas 
+	if (probabilityCap == 5) {
+
+		AGenerateCapsule* GenerateCapsulaDano = GetWorld()->SpawnActor<AGenerateCapsuleDamage>(AGenerateCapsuleDamage::StaticClass());
+		ACapsuleBasic* CapsuleBasic = GenerateCapsulaDano->GetCapsule("BallX2");
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Red, FString::Printf(TEXT("Capsula BallX2 %s"), *CapsuleBasic->ReturnNameCap()));
+	}
+	else if (probabilityCap < 3) {
+		AGenerateCapsule* GenerateCapsulaDano = GetWorld()->SpawnActor<AGenerateCapsuleDamage>(AGenerateCapsuleDamage::StaticClass());
+		ACapsuleBasic* CapsuleBasic = GenerateCapsulaDano->GetCapsule("Dano");
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Capsula Dano %s"), *CapsuleBasic->ReturnNameCap()));
+
+	}
+	else if (probabilityCap > 9) {
+		AGenerateCapsule* GenerateCapsulaHelp = GetWorld()->SpawnActor<AGenerateCapsuleHelp>(AGenerateCapsuleHelp::StaticClass());
+		ACapsuleBasic* CapsuleBasic = GenerateCapsulaHelp->GetCapsule("Barrier");
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Green, FString::Printf(TEXT("Capsula Barrier %s"), *CapsuleBasic->ReturnNameCap()));
+	}
+	else if (probabilityCap == 6) {
+		AGenerateCapsule* GenerateCapsulaHelp = GetWorld()->SpawnActor<AGenerateCapsuleHelp>(AGenerateCapsuleHelp::StaticClass());
+		ACapsuleBasic* CapsuleBasic = GenerateCapsulaHelp->GetCapsule("Life");
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Cyan, FString::Printf(TEXT("Capsula Life %s"), *CapsuleBasic->ReturnNameCap()));
+
+	}
+	else if (probabilityCap == 10) {
+		AGenerateCapsule* GenerateCapsulaHelp = GetWorld()->SpawnActor<AGenerateCapsuleHelp>(AGenerateCapsuleHelp::StaticClass());
+		ACapsuleBasic* CapsuleBasic = GenerateCapsulaHelp->GetCapsule("Growth");
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::White, FString::Printf(TEXT("Capsula Growth %s"), *CapsuleBasic->ReturnNameCap()));
+
+	}
+	else if (probabilityCap < 8 && probabilityCap > 6) {
+		AGenerateCapsule* GenerateCapsulaHelp = GetWorld()->SpawnActor<AGenerateCapsuleHelp>(AGenerateCapsuleHelp::StaticClass());
+		ACapsuleBasic* CapsuleBasic = GenerateCapsulaHelp->GetCapsule("Shield");
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Orange, FString::Printf(TEXT("Capsula Shield %s"), *CapsuleBasic->ReturnNameCap() ));
+	}
+
+	
 
 }
 // aqui aplicamos el singleton 
@@ -52,7 +94,7 @@ void AUEBricks_Breaker4GameModeBase::BeginPlay()
 
 
 		}
-		
+		 
 		Brickpo += BrickSpaceZ;
 		BrickPosition = Brickpo;
 		

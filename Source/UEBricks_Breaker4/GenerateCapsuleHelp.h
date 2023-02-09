@@ -13,5 +13,7 @@ UCLASS()
 class UEBRICKS_BREAKER4_API AGenerateCapsuleHelp : public AGenerateCapsule
 {
 	GENERATED_BODY()
-	
+
+		virtual ACapsuleBasic* FabricarCapsula(FString NombreCapTipo) override;
+
 };

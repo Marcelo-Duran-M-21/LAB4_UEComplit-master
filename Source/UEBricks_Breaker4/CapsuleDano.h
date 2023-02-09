@@ -13,5 +13,6 @@ UCLASS()
 class UEBRICKS_BREAKER4_API ACapsuleDano : public ACapsuleBasic
 {
 	GENERATED_BODY()
-	
+public:
+	ACapsuleDano();
 };

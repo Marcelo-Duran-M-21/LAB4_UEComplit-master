@@ -3,3 +3,7 @@
 
 #include "CapsuleBallX2.h"
 
+ACapsuleBallX2::ACapsuleBallX2()
+{
+	NameCap = "BallX2";
+}

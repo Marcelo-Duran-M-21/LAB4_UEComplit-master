@@ -13,5 +13,6 @@ UCLASS()
 class UEBRICKS_BREAKER4_API ACapsuleShield : public ACapsuleBasic
 {
 	GENERATED_BODY()
-	
+public:
+		ACapsuleShield();
 };

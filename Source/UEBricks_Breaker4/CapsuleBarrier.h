@@ -13,5 +13,6 @@ UCLASS()
 class UEBRICKS_BREAKER4_API ACapsuleBarrier : public ABrick
 {
 	GENERATED_BODY()
-	
+public:
+	ACapsuleBarrier();
 };

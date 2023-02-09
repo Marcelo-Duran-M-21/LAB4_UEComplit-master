@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "CapsuleBasic.h"
 #include "GenerateCapsule.generated.h"
 
 UCLASS()
@@ -15,6 +16,11 @@ public:
 	// Sets default values for this actor's properties
 	AGenerateCapsule();
 
+
+	virtual ACapsuleBasic* FabricarCapsula(FString NombreCapTipo)PURE_VIRTUAL(AGenerateCapsule::FabricarCapsula, return nullptr;);
+
+	ACapsuleBasic* GetCapsule(FString TipoCapsule);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -22,5 +28,5 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+	
 };

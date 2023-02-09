@@ -13,5 +13,8 @@ UCLASS()
 class UEBRICKS_BREAKER4_API ACapsuleLife : public ACapsuleBasic
 {
 	GENERATED_BODY()
-	
+public:
+	// Sets default values for this actor's properties
+	ACapsuleLife();
+
 };

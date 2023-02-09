@@ -15,14 +15,17 @@ class UEBRICKS_BREAKER4_API ACapsuleBasic : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ACapsuleBasic();
-	//nombre de la capsula
-	FString NameCap;
+	
 
 
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	//nombre de la capsula
+	FString NameCap;
+	float su;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		class UStaticMeshComponent* SM_Capsule;
@@ -36,5 +39,13 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	// sirve para generar nueva capsula
+
+	virtual void Generate();
+
+
+	// implementamos el metodos   
+
+	FString ReturnNameCap() { return NameCap; }
 
 };

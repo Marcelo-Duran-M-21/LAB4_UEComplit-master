@@ -3,3 +3,8 @@
 
 #include "CapsuleLife.h"
 
+ACapsuleLife::ACapsuleLife()
+{
+	NameCap = "Life";
+
+}

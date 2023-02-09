@@ -16,6 +16,8 @@ class UEBRICKS_BREAKER4_API AUEBricks_Breaker4GameModeBase : public AGameModeBas
 public:
 	// Sets default values for this actor's properties
 	AUEBricks_Breaker4GameModeBase();
+
+
 protected:
 	//The Inventory of this Actor
 	UPROPERTY()

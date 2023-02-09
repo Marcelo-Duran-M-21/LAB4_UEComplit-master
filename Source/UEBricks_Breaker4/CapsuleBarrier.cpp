@@ -3,3 +3,7 @@
 
 #include "CapsuleBarrier.h"
 
+ACapsuleBarrier::ACapsuleBarrier()
+{
+	 
+}

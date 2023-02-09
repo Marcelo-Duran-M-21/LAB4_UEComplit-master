@@ -13,5 +13,7 @@ UCLASS()
 class UEBRICKS_BREAKER4_API ABasicGrowthPaddle : public ACapsuleBasic
 {
 	GENERATED_BODY()
-	
+public:
+	ABasicGrowthPaddle();
+
 };

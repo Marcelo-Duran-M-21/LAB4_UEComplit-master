@@ -3,3 +3,7 @@
 
 #include "CapsuleShield.h"
 
+ACapsuleShield::ACapsuleShield()
+{
+	NameCap = "Shield";
+}

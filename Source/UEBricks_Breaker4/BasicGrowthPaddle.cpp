@@ -3,3 +3,7 @@
 
 #include "BasicGrowthPaddle.h"
 
+ABasicGrowthPaddle::ABasicGrowthPaddle()
+{
+	NameCap = "Growth";
+}

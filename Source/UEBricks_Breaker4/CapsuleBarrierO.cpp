@@ -3,3 +3,7 @@
 
 #include "CapsuleBarrierO.h"
 
+ACapsuleBarrierO::ACapsuleBarrierO()
+{
+	NameCap = "Barrier";
+}

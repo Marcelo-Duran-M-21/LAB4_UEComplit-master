@@ -51,3 +51,7 @@ void ACapsuleBasic::Tick(float DeltaTime)
 
 }
 
+void ACapsuleBasic::Generate()
+{
+}
+
